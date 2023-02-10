@@ -21,7 +21,7 @@ const Canvas = () => {
   const [image, setImage] = useState();
   const imageRef = useRef(null);
   const dataRef = useRef(null);
-  const [points, setPoints] = useState([]);
+  const [points, setPoints] = useState([[50, 50], [200, 50], [200, 200], [50, 200]]);
   const [size, setSize] = useState({});
   const [flattenedPoints, setFlattenedPoints] = useState();
   const [position, setPosition] = useState([0, 0]);
@@ -122,8 +122,8 @@ const Canvas = () => {
     <div style={wrapperStyle}>
       <div style={columnStyle}>
         <Stage
-          width={size.width || 650}
-          height={size.height || 302}
+          width={window.innerWidth}
+          height={window.innerHeight}
           onMouseMove={handleMouseMove}
           onMouseDown={handleMouseDown}
         >
